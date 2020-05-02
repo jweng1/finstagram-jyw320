@@ -1,0 +1,22 @@
+  
+<html>
+    <head>
+        <title>Followers and Following</title>
+    </head>
+    <body>
+        <h3>Followers</h3>
+        <ul>
+            {% for follower in followers %}
+                <li>{{follower.follower}}</li>
+            {% endfor %}
+        </ul>
+        <hr>
+        <h3>Following</h3>
+        <ul>
+            {% for follower in following %}
+                <li>{{follower.followee}}</li>
+            {% endfor %}
+        </ul>
+        <a href="/home">Go back</a>
+    </body>
+</html>

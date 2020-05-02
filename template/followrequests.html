@@ -1,0 +1,28 @@
+  
+<html>
+    <head>
+        <title>Finstagram</title>
+    </head>
+    <body>
+        <div>
+            <a href="/home">Go back</a>
+            <h2>Manage your follow requests:</h2>
+            <form action="/acceptFollow" method="post" enctype="multipart/form-data">
+                {% if message %}
+                    {{ message }}
+                {% endif %}
+                <ul>
+                {% for followrequest in followrequests %}
+                    <li>
+                        Follow request from: {{followrequest.follower}}
+                        <input type="radio" name="action{{followrequest.follower}}" value="accept" checked> Accept
+                        <input type="radio" name="action{{followrequest.follower}}" value="decline"> Decline   
+                     </li>
+                     <br>
+                     <input type="submit" value="Submit">
+                {% endfor %}
+            </ul>
+            </form>
+        </div>
+    </body>
+</html>

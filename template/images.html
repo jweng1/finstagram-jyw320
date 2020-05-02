@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Finstagram</title>
+    </head>
+    <body>
+        <a href="/home">Go back</a>
+        <h1>Image Gallery</h1>
+        <div>
+       
+            {% for image in images %}
+            <img src='/Users/jweng/Desktop/finstagram/photoData/{{image.pID}}.jpg', width='300'  />
+            <p>Caption: {{image.caption}}</p>
+            <p>PhotoID: {{image.pID}}, Poster: {{image.poster}}, Timestamp: {{image.postingDate}}</p>
+            
+            {% endfor %}
+        </div>
+    </body>
+</html>
+
+

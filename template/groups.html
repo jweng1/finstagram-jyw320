@@ -1,0 +1,29 @@
+  
+<html>
+  <head>
+    <title>Manage Groups</title>
+  </head>
+  <body>
+    <h3>Owned Groups</h3>
+    <ul>
+      {% for group in owned %}
+        <form action='/deleteGroup', method='POST'>
+          <input type="hidden" name="groupName" value="{{group.groupName}}"/>
+          <li>{{ group.groupName + group.description }}</li>
+          <input type="submit" value="Delete">
+        </form>
+      {% endfor %}
+    </ul>
+    <hr>
+    <h3>Other Groups You're In</h3>
+    <ul>
+      {% for group in inGroups %}
+        <form action="/leaveGroup" method='POST'>
+          <input type="hidden" name="groupName" value="{{group.groupName}}" />
+          <li>{{ group.groupName + group.description }}</li>
+          <input type="submit" value="Leave">
+        </form>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
