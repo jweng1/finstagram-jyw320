@@ -200,8 +200,7 @@ def acceptFollow():
     data = cursor.fetchall()
 
     for follower in data:
-        #action = request.form["action" + followeeUsername["follower"]]
-        action = request.form['action']
+        action = request.form["action" + follower["follower"]]
         if action == 'accept':
             query = 'UPDATE Follow SET followStatus=%s WHERE follower=%s AND followee=%s'
             cursor.execute(query, (1, follower["follower"], session["username"]))
